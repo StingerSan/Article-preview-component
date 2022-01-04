@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background-image: url(../images/icon-share.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
