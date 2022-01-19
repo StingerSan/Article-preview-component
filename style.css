@@ -8,6 +8,8 @@
 
 body {
     background-color: hsl(210, 46%, 95%);
+    width: 100%;
+    height: 100vh;
     font-size: 13px;
     font-family: "Manrope", sans-serif;
 }
@@ -18,7 +20,6 @@ article {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,7 +34,7 @@ img.desk {
     object-fit: cover;
     clip-path: inset(0 18% 0 0);
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 div.wrapper {
@@ -42,7 +43,7 @@ div.wrapper {
     justify-content: space-between;
     background-color: white;
     flex-grow: 1;
-    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 
 }
@@ -97,39 +98,90 @@ button:hover {
 }
 
 div.social-media {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    bottom: 85px;
+    right: -53px;
+    transition: 1s ease;
 }
+
+/* /////////////////////////////////////////////////////Active media button///////////////////////////////////////////////////////// */
+
+
+
+@media (min-width: 1024px) {
+    div.social-media::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: hsl(217, 19%, 35%);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: rotate(45deg) translateY(70%);
+
+    }
+
+    div.social-media.active {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: absolute;
+        bottom: 85px;
+        right: -53px;
+        background-color: hsl(217, 19%, 35%);
+        width: 250px;
+        height: 50px;
+        border-radius: 10px;
+        opacity: 1;
+    }
+
+    div.share p {
+        color: hsl(212, 23%, 69%);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 46px;
+    }
+
+    div.icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+    }
+
+    button.active {
+        background-color: hsl(214, 17%, 51%);
+        background-image: url(../images/icon-share-white.svg);
+
+    }
+}
+
 
 
 @media (max-width: 800px) {
 
     article {
-        /* position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); */
-        /* overflow: hidden; */
+
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 90%;
         max-height: 70%;
-        /* background-color: white; */
-        /* border-radius: 10px; */
+
     }
 
     img.desk {
         width: 100%;
         clip-path: inset(0 0 15% 0);
-        /* border-top-left-radius: 10px;
-        border-top-right-radius: 10px; */
+
     }
 
     div.wrapper {
         background-color: white;
-        /* flex-grow: 1; */
-        /* border-bottom-left-radius: 10px; */
-        /* border-bottom-right-radius: 10px; */
+
 
     }
 
@@ -171,7 +223,6 @@ div.social-media {
     }
 
     button {
-
         background-image: url(../images/icon-share.svg);
     }
 
@@ -180,7 +231,9 @@ div.social-media {
         display: none;
     }
 
-    /* /////////////////////////////////////////////////////Active media button///////////////////////////////////////////////// */
+
+
+    /* /////////////////////////////////////////////////////Active media button mobile///////////////////////////////////////////////// */
 
     div.avatar-wrap.active {
         background-color: hsl(217, 19%, 35%);
@@ -212,6 +265,7 @@ div.social-media {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        position: static;
         width: 70%;
     }
 
