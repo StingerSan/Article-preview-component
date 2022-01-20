@@ -87,7 +87,7 @@ button {
     border: none;
     margin-left: auto;
     border-radius: 50%;
-    background-image: url(../images/icon-share.svg);
+    background-image: url(..images/icon-share.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -150,7 +150,7 @@ div.social-media {
 
     button.active {
         background-color: hsl(214, 17%, 51%);
-        background-image: url(../images/icon-share-white.svg);
+        background-image: url(..images/icon-share-white.svg);
 
     }
 }
@@ -198,7 +198,7 @@ div.social-media {
     }
 
     button {
-        background-image: url(../images/icon-share.svg);
+        background-image: url(..images/icon-share.svg);
     }
 
 
@@ -233,7 +233,7 @@ div.social-media {
 
     button.active {
         background-color: hsl(214, 17%, 51%);
-        background-image: url(../images/icon-share-white.svg);
+        background-image: url(..images/icon-share-white.svg);
     }
 
     div.social-media.active {
